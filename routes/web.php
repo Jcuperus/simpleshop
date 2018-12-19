@@ -11,5 +11,8 @@
 |
 */
 
-Route::get('/', 'ProductController@index');
-Route::get('/categories', 'CategoryController@index');
+Route::get('/', 'ProductController@index')->name('products');
+Route::get('/product/{id}', 'ProductController@show')->name('product.show');
+Route::post('/product/{id}/comment', 'ProductController@saveComment')->name('product.comment');
+
+Route::get('/categories', 'CategoryController@index')->name('categories');

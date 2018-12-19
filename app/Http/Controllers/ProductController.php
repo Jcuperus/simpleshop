@@ -11,4 +11,16 @@ class ProductController extends Controller
         $products = Product::all();
         return view('index', ['products' => $products]);
     }
+
+    public function show($id) {
+        $product = Product::findOrFail($id);
+        return view('product', ['product' => $product]);
+    }
+
+    public function saveComment($id) {
+        $product = Product::findOrFail($id);
+        
+
+        return redirect()->route('product.show', ['id' => $id]);
+    }
 }

@@ -4,7 +4,7 @@
 
 <h1>Products list</h1>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>#</th>
@@ -18,7 +18,7 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ $product->id }}</td>
-            <td>{{ $product->name }}</td>
+            <td><a href="{{ route('product.show', ['id' => $product->id]) }}">{{ $product->name }}</a></td>
             <td>€ {{ $product->price }}</td>
             <td>{{ $product->stock }}</td>
             <td>
