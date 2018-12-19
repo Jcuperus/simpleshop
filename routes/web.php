@@ -13,6 +13,6 @@
 
 Route::get('/', 'ProductController@index')->name('products');
 Route::get('/product/{id}', 'ProductController@show')->name('product.show');
-Route::post('/product/{id}/comment', 'ProductController@saveComment')->name('product.comment');
+Route::post('/product/{id}/review', 'ProductController@saveReview')->name('product.review');
 
 Route::get('/categories', 'CategoryController@index')->name('categories');
