@@ -27,7 +27,7 @@ class CreateProductTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('products_categories', function (Blueprint $table) {
+        Schema::create('category_product', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('category_id');
