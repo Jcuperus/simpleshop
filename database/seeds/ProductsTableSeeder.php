@@ -14,9 +14,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         factory(Category::class, 50)->create()->each(function ($category) {
-            for ($i = 0; $i < rand(1, 5); $i++) {
-                $category->products()->save(factory(Product::class)->make());
-            }
+            $category->products()->saveMany(factory(Product::class, rand(1, 5))->create());
         });
     }
 }
